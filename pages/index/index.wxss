@@ -1,0 +1,19 @@
+/* index.wxss */
+.weui-cell__ft {
+  display: flex;
+  align-items: center;
+}
+.weui-loadmore__tips_in-line {
+  background-color: #F8F8F8;
+}
+.nearlyChoice{
+  text-align: right;
+}
+.nearlyChoice button{
+  margin-left: 20rpx;
+}
+.canvas{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}

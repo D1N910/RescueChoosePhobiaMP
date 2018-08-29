@@ -1,0 +1,22 @@
+<!--pages/contact/index.wxml-->
+<view class="page">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <image src="../../static/anthor.jpg" style="width: 50px; height: 50px; display: block"/>
+        </view>
+        <view class="weui-cell__bd">
+            <view>D1n910</view>
+            <view style="font-size: 13px;color: #888888;">联系邮箱:wyd1n910@gmail.com</view>
+        </view>
+    </view>
+  </view>
+  <view class="button-sp-area">
+      <button
+        class="weui-btn"
+        type="primary"
+        plain="true"
+        bindtap="Feeding"
+      >恩宠作者</button>
+  </view>
+</view>
