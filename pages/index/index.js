@@ -140,6 +140,9 @@ Page({
     return haveNull
   },
 
+  /**
+   * 用户点击帮你选择
+   */
   helpSelect() {
     if (this.checkNul()){
       this.PopupWowToShowSelectionResult()

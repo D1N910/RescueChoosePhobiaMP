@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    poisData:[]
+    poisData:[],
+    backgroundColor: ['#336699', '#6699CC', '#66CCCC', '#B45B3E', '#479AC7', '#00B271'],
+    showLoading: true   
   },
 
   /**
@@ -13,19 +15,27 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var myAmapFun = new amapFile.AMapWX({ key: '输入你的key' });
+    var myAmapFun = new amapFile.AMapWX({ key: '15137e8e908babd50192676fca472bee' });
     myAmapFun.getPoiAround({
       querytypes:'餐饮服务',
       success: function (data) {
         console.log(data)
         that.setData({
-          poisData: data.poisData
+          poisData: data.poisData,
+          showLoading: false          
         })
-        //成功回调
       },
       fail: function (info) {
         //失败回调
-        console.log(info)
+        that.setData({
+          showLoading: false
+        })
+        wx.showModal({
+          title: '获取周边失败',
+          content: '请检查是否授权小程序获得您的位置或者是否打开网络或者是否处于荒郊野岭。',
+          showCancel: false,
+          confirmText: '待朕看看'
+        })
       }
     })
   },
@@ -77,5 +87,52 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 用户点击帮你选择
+   */
+  helpSelect() {
+    this.PopupWowToShowSelectionResult()
+  },
+
+  /** 
+  * 用以显示选择结果的弹窗
+  */
+  PopupWowToShowSelectionResult: function () {
+    wx.showLoading({
+      title: '选择中'
+    })
+    setTimeout(() => {
+      var _that = this
+      wx.hideLoading()
+      wx.showShareMenu({
+        withShareTicket: true
+      })
+      wx.showModal({
+        title: '选择享用',
+        content: this.data.poisData[this.RandomNum()].name,
+        cancelText: '看看别的',
+        confirmText: '让朕看看',
+        success(res) {
+          wx.hideShareMenu();
+        }
+      })
+    }, 1000)
+  },
+  /**
+   * 获取随机数
+   * @param Max 最大值
+   */
+  RandomNum: function (Max) {
+    var that = this
+    var Range = this.data.poisData.length - 1;
+    var Rand = Math.random();
+    var num = Math.round(Rand * Range);
+    wx.setStorage({
+      key: 'choiceEatting',
+      data: this.data.poisData[num],
+    })
+    return num;
   }
 })

@@ -1,16 +1,55 @@
 <!--pages/eat/index.wxml-->
-
-<view
-class="weui-cell"
-wx:for="{{poisData}}"
-wx:key="{{item.id}}">
-      <view class="weui-cell__hd" data-text="{{item.name}}" style="position: relative;margin-right: 10px;">
-          <image
-            src="{{item.photos[0].url}}"
-            style="width: 50px; height: 50px; display: block"/>
-      </view>
-      <view class="weui-cell__bd">
-          <view>{{item.name}}</view>
-          <view style="font-size: 13px;color: #888888;">{{item.address}}</view>
-      </view>
+<view>
+  <view
+    class="weui-loadmore"
+    wx:if="{{showLoading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
   </view>
+  <view
+    class="weui-loadmore weui-loadmore_line"
+    wx:if="{{!showLoading&&poisData.length==0}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view>
+  <view
+    class="page__bd"
+    wx:if="{{poisData.length!=0}}">    
+    <view class="weui-cells weui-cells_after-title">
+      <view
+        class="weui-cell"
+        wx:for="{{poisData}}"
+        wx:key="{{item.id}}">
+          <view class="weui-cell__hd" data-text="{{item.name}}" data-cBGC="{{backgroundColor[index]}}" style="position: relative;margin-right: 10px;">
+              <image
+                src="{{item.photos[0].url}}"
+                style="width: 50px; height: 50px; display: block"/>
+          </view>
+          <view class="weui-cell__bd">
+              <view>{{item.name}}</view>
+              <view style="font-size: 13px;color: #888888;">{{item.address}}</view>
+          </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page__bd page__bd_spacing">    
+    <button
+      class="weui-btn"
+      type="primary"
+      bindtap="helpSelect"
+      wx:if="{{poisData.length>=2}}"
+    >帮你选择</button>
+    <button
+      class="weui-btn"
+      type="primary"
+      disabled="true"
+      wx:if="{{poisData.length<2&&!showLoading}}"
+    >似乎不用选择</button>
+    <button
+      class="weui-btn"
+      type="primary"
+      disabled="true"
+      wx:if="{{showLoading}}"
+    >等待加载</button>
+  </view>
+</view>

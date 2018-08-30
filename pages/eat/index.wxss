@@ -1,14 +1,21 @@
 /* pages/eat/index.wxss */
+.weui-cell__hd image{
+  position: relative;
+  z-index: 2;
+}
 .weui-cell__hd::after{
   content: attr(data-text);
   font-size: 38px;
   width: 50px;
   height: 50px;
+  line-height: 50px;
   position: absolute;
   left: 0px;
   top: 0;
-  background: red;
-  z-index: -1;
+  z-index: 1;
   overflow: hidden;
   text-align: center;
+}
+.weui-loadmore__tips{
+  background: inherit;
 }
