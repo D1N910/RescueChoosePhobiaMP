@@ -1,12 +1,14 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/index/index",    
+    "pages/eat/index",
+    "pages/nav/index",
     "pages/contact/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "navigationBarTitleText": "解救选择恐惧症+",
+    "navigationBarTitleText": "解救选择恐惧症 for 小程序",
     "navigationBarTextStyle": "black"
   }
 }

@@ -85,14 +85,6 @@
       >转发刚刚的选择</button>
     </view>
   </view>
-    <view class="weui-footer">
-        <view class="weui-footer__links">
-            <navigator
-              url="/pages/contact/index"
-              class="weui-footer__link">联系作者</navigator>
-        </view>
-        <view class="weui-footer__text">Copyright © 2018- D1n910</view>
-    </view>
     <canvas
       class="canvas"
       style="width: 500px; height: 400px;opacity:0;"

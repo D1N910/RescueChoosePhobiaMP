@@ -1,3 +1,4 @@
+var qqmapsdk;
 // index.js
 Page({
 
@@ -16,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideShareMenu()
+    wx.hideShareMenu();
   },
 
   /**
@@ -30,7 +31,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
@@ -165,6 +165,7 @@ Page({
         confirmText: '朕了解了',
         showCancel: false,
         success(res) {
+          wx.hideShareMenu();          
           _that.setData({
             nearlyChoice: _that.data.nearlyChoice
           })
@@ -196,7 +197,7 @@ Page({
       showCanvas: true
     },()=>{
       const shareImg = wx.createCanvasContext('shareImg')
-      that.drewText(10, shareImg, that.data.selectionList[num], 60, '#fff', 50, 100, 300, 'left', 1, 10, '#000')
+      that.drewText(10, shareImg, that.data.selectionList[num], 60, '#fff', 0, 0, 500, 'left', 1, 10, '#000')
       shareImg.draw(false, (e) => {
         wx.canvasToTempFilePath({
           x: 0,
