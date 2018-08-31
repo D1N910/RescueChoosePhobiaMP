@@ -1,1 +1,14 @@
 /* pages/eatPreview/index.wxss */
+swiper{
+  height: 450rpx;
+}
+.swiper-item{
+  display: block;
+  width: calc(100% - 180rpx);
+  height: 450rpx;
+  margin: auto;
+}
+.nearlyChoice{
+  text-align: right;
+  margin-top: 16rpx;
+}

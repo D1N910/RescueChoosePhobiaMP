@@ -67,8 +67,8 @@ Page({
   onShareAppMessage: function () {
     var that = this
     return {
-      title: `${this.data.title}选择结果`,
-      path: '／pages/index/index',
+      title: `${this.data.title}的选择结果`,
+      path: `/pages/nav/index?share=${this.data.nearlyChoice}`,
       imageUrl: that.data.thisGetImgPath,
       success(e){
         console.log('转发成功')
@@ -200,7 +200,7 @@ Page({
       showCanvas: true
     },()=>{
       const shareImg = wx.createCanvasContext('shareImg')
-      that.drewText(10, shareImg, that.data.selectionList[num], 60, '#fff', 0, 0, 500, 'left', 1, 10, '#000')
+      that.drewText(10, shareImg, that.data.selectionList[num], 40, '#fff', 70, 70, 300, 'left', 1, 10, '#000')
       shareImg.draw(false, (e) => {
         wx.canvasToTempFilePath({
           x: 0,

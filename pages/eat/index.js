@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var myAmapFun = new amapFile.AMapWX({ key: '15137e8e908babd50192676fca472bee' });
+    var myAmapFun = new amapFile.AMapWX({ key: '' });
     myAmapFun.getPoiAround({
       querytypes:'餐饮服务',
       success: function (data) {
@@ -83,13 +83,6 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  /**
    * 用户点击帮你选择
    */
   helpSelect() {
@@ -116,6 +109,11 @@ Page({
         confirmText: '让朕看看',
         success(res) {
           wx.hideShareMenu();
+          if(res.confirm){
+            wx.navigateTo({
+              url: '../eatPreview/index'
+            })
+          }
         }
       })
     }, 1000)
@@ -134,5 +132,21 @@ Page({
       data: this.data.poisData[num],
     })
     return num;
+  },
+
+  /**
+   * 用户点击店铺跳转
+   */
+  navToShop(e) {
+    var that = this
+    wx.setStorage({
+      key: 'choiceEatting',
+      data: that.data.poisData[e.currentTarget.dataset.id],
+      success(){
+        wx.navigateTo({
+          url: '/pages/eatPreview/index'
+        })
+      }
+    })
   }
 })

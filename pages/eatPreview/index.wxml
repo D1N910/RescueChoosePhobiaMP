@@ -1,1 +1,59 @@
 <!--pages/eatPreview/index.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{shopDeatil.name}}</view>
+        <view class="page__desc">{{shopDeatil.address}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells__title">餐厅详情（来自高德地图）</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">餐厅类型</view>
+                <view
+                  class="weui-cell__ft"
+                  wx:if="{{shopDeatil.type}}">{{shopDeatil.type}}</view>
+                <view
+                  class="weui-cell__ft"
+                  wx:if="{{!shopDeatil.type}}">暂无</view>
+            </view>
+        </view>
+        <view
+          class="weui-cells__title"
+          wx:if="{{shopDeatil.photos.length!=0}}">相关图片</view>
+        <swiper
+          wx:if="{{shopDeatil.photos.length!=0}}"
+          indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}"
+          interval="5000">
+          <block
+            wx:for="{{shopDeatil.photos}}"
+            wx:key="index">
+            <swiper-item>
+              <image
+                src="{{item.url}}"
+                mode="aspectFill"
+                lazy-load="{{true}}"
+                data-index="{{index}}"
+                bindtap="photoPreview"
+                class="swiper-item"/>
+            </swiper-item>
+          </block>
+        </swiper>
+    </view>
+    <view class="page__bd page__bd_spacing">    
+      <button
+        class="weui-btn"
+        type="primary"
+        bindtap="helpSelect"
+      >到这里去</button>
+      <view
+        class="nearlyChoice">
+        <button
+        class="weui-btn mini-btn"
+        type="warn"
+        size="mini"
+        open-type="share"   
+        >转发给朋友</button>
+      </view>
+    </view>
+</view>

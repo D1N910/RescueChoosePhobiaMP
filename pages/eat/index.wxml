@@ -18,7 +18,9 @@
       <view
         class="weui-cell"
         wx:for="{{poisData}}"
-        wx:key="{{item.id}}">
+        wx:key="{{index}}"
+        data-id="{{index}}"
+        bindtap="navToShop">
           <view class="weui-cell__hd" data-text="{{item.name}}" data-cBGC="{{backgroundColor[index]}}" style="position: relative;margin-right: 10px;">
               <image
                 src="{{item.photos[0].url}}"
