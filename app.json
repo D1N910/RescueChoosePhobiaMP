@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/index/index",    
     "pages/nav/index",    
     "pages/eat/index",    
     "pages/eatPreview/index",    
     "pages/map/index",
-    "pages/index/index",
     "pages/contact/index"
   ],
   "window": {
@@ -16,7 +16,7 @@
   "plugins": {
     "myPlugin": {
       "version": "1.0.6",
-      "provider": ""
+      "provider": "wx5bc2ac602a747594"
     }
   }
 }

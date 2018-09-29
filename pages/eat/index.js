@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var myAmapFun = new amapFile.AMapWX({ key: '' });
+    var myAmapFun = new amapFile.AMapWX({ key:'7b44ad9a53de2e459d7ad4893b31b6b3' });
     myAmapFun.getPoiAround({
       querytypes:'餐饮服务',
       success: function (data) {
