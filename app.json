@@ -1,16 +1,17 @@
 {
   "pages": [
-    "pages/index/index",    
     "pages/nav/index",    
-    "pages/eat/index",    
-    "pages/eatPreview/index",    
+    "pages/bangbang/index",
+    "pages/index/index",
+    "pages/eat/index",
+    "pages/eatPreview/index",
     "pages/map/index",
     "pages/contact/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "navigationBarTitleText": "解救选择恐惧症 for 小程序",
+    "navigationBarTitleText": "D1n910➕💗️",
     "navigationBarTextStyle": "black"
   },
   "plugins": {

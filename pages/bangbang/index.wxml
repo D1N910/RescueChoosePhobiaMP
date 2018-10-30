@@ -1,0 +1,86 @@
+<!--pages/bangbang/index.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__desc">调用手机的震动功能。不用担心，这不会对你的手机造成什么危害。[熄屏可用]</view>
+    </view>
+    <view
+      class="showMoveTag">
+      <view
+        data-speed="10"
+        bindtap="onChangeSpeed">慢</view>
+      <view
+        data-speed="255"      
+        bindtap="onChangeSpeed">中等</view>
+      <view
+        data-speed="500"      
+        bindtap="onChangeSpeed">快</view>
+    </view>
+    <view class="section section_gap">
+      <view class="body-view">
+        <slider
+          activeColor="#5c7fa9"
+          bindchanging="changeMoveTime"
+          value="{{moveTime}}"
+          min="10"
+          max="500"/>
+      </view>
+    </view>
+
+    <button
+      plain
+      style="border-color:#1B9AF7;color:#1B9AF7"
+      wx:if="{{!ifMove}}"
+      class="touch"
+      type="primary"
+      bindtap="onTouchMove">
+      开始
+    </button>
+    <button
+      plain
+      class="touch"    
+      wx:if="{{ifMove}}"    
+      type="warn"
+      bindtap="onStopMove">
+      停止
+    </button>
+
+    <view class="page__desc">在x时后停止:</view>
+
+    <view class="buttonContainer">
+      <button
+        plain    
+        class="stillMoveButton button button-3d button-action button-pill"
+        type="primary"
+        data-stilltime="30000"
+        bindtap="onStopIn">
+        30秒
+      </button>
+
+      <button
+        plain    
+        class="stillMoveButton button button-3d button-action button-pill"
+        type="primary"
+        data-stilltime="100000"
+        bindtap="onStopIn">
+        一分钟
+      </button>
+      
+      <button
+        plain
+        class="stillMoveButton button button-3d button-action button-pill"
+        type="primary"
+        data-stilltime="300000"
+        bindtap="onStopIn">
+        五分钟
+      </button>
+
+      <button
+        plain    
+        class="stillMoveButton button button-3d button-action button-pill"    
+        type="primary"
+        data-stilltime="600000"      
+        bindtap="onStopIn">
+        十分钟
+      </button>
+    </view>    
+</view>

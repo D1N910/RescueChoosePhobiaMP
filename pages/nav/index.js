@@ -8,12 +8,14 @@ Page({
       {
         id: 'eat',
         name: '吃什么'
+      },
+      {
+        id: 'bangbang',
+        name: '仙女棒'
       }
     ]
   },
   onLoad: function (options) {
-    console.log(options);
-    console.log(typeof options.ddd)
     if (typeof options.share != 'undefined'){
       wx.showModal({
         title: '启禀皇上',
