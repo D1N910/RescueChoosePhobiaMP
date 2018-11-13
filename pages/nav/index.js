@@ -12,6 +12,10 @@ Page({
       {
         id: 'bangbang',
         name: '仙女棒'
+      },
+      {
+        id: 'good',
+        name: '俾个GOOD你'
       }
     ]
   },
