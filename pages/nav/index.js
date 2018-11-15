@@ -14,9 +14,13 @@ Page({
         name: '仙女棒'
       },
       {
-        id: 'good',
-        name: '俾个GOOD你'
+        id: 'evaluation',
+        name: '购物评价生成器'
       }
+      // {
+      //   id: 'good',
+      //   name: '俾个GOOD你'
+      // }
     ]
   },
   onLoad: function (options) {

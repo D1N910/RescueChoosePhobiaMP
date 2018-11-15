@@ -1,0 +1,39 @@
+<!--pages/evaluation/index.wxml-->
+<view>
+  <view class="weui-cells__title">
+    评价类型
+  </view>
+  <view class="buttonContainer">
+    <button size="mini">
+      好评
+    </button>
+    <button size="mini">
+      中评
+    </button>
+    <button size="mini">
+      差评
+    </button>
+  </view>
+  <view class="weui-cells__title">
+    当前为 好评 评价
+  </view>
+  <view class="weui-cells weui-cells_form">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" value="{{ecaluation}}">
+        </textarea>
+        <view class="weui-textarea-counter">共{{ecaluation.length}}字</view>
+      </view>
+    </view>
+  </view>
+  <view class="buttonContainer">
+    <button
+      size="mini"
+      bindtap="onSetCLip">
+      复制
+    </button>
+    <button size="mini">
+      换一个
+    </button>
+  </view>
+</view>
