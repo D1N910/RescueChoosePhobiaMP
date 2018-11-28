@@ -4,18 +4,27 @@
     评价类型
   </view>
   <view class="buttonContainer">
-    <button size="mini">
+    <button
+      bindtap="changeComitType"
+      data-type="0"
+      size="mini">
       好评
     </button>
-    <button size="mini">
+    <!-- <button
+      bindtap="changeComitType"    
+      data-type="1"    
+      size="mini">
       中评
     </button>
-    <button size="mini">
+    <button
+      bindtap="changeComitType"    
+      data-type="2"        
+      size="mini">
       差评
-    </button>
+    </button> -->
   </view>
   <view class="weui-cells__title">
-    当前为 好评 评价
+    当前为 {{ecaluationType}} 评价
   </view>
   <view class="weui-cells weui-cells_form">
     <view class="weui-cell">
@@ -32,7 +41,9 @@
       bindtap="onSetCLip">
       复制
     </button>
-    <button size="mini">
+    <button 
+      bindtap="changeCommit"
+      size="mini">
       换一个
     </button>
   </view>
