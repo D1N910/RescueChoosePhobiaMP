@@ -2,6 +2,10 @@ Page({
   data: {
     list: [
       {
+        id: 'wife',
+        name: '老婆生成器[最新]'
+      },
+      {
         id: 'index',
         name: '普通选择'
       },
@@ -12,11 +16,11 @@ Page({
       {
         id: 'bangbang',
         name: '仙女棒'
-      },
-      {
-        id: 'good',
-        name: '俾个GOOD你'
       }
+      // {
+      //   id: 'good',
+      //   name: '俾个GOOD你'
+      // }
     ]
   },
   onLoad: function (options) {

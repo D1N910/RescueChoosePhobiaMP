@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/nav/index",    
+    "pages/nav/index",
+    "pages/wife/index",
     "pages/bangbang/index",
     "pages/index/index",
     "pages/eat/index",

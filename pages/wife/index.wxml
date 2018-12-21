@@ -1,0 +1,69 @@
+<!--pages/wife/index.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>身高</view>
+        </view>
+        <view
+          wx:if="{{nowBody.height}}"
+          class="weui-cell__ft">{{nowBody.height}}cm</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>体重</view>
+        </view>
+        <view
+          wx:if="{{nowBody.weight}}"
+          class="weui-cell__ft">{{nowBody.weight}}kg</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>CUP</view>
+        </view>
+        <view class="weui-cell__ft">{{nowBody.cupsize}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>肤色</view>
+        </view>
+        <view class="weui-cell__ft">{{nowBody.skin}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>发型</view>
+        </view>
+        <view class="weui-cell__ft">{{nowBody.hairstyle}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>发色</view>
+        </view>
+        <view class="weui-cell__ft" style="background-color:{{nowBody.hairColor}};">{{nowBody.hairColor}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>瞳色</view>
+        </view>
+        <view class="weui-cell__ft" style="background-color:{{nowBody.eyes}};">{{nowBody.eyes}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>属性</view>
+        </view>
+        <view class="weui-cell__ft">{{nowBody.attribute}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>性格</view>
+        </view>
+        <view class="weui-cell__ft">{{nowBody.character}}</view>
+      </view>
+    </view>
+  </view>
+  <button
+    type="primary"
+    bindtap="startGenerator"
+    class="weui-btn weui-btn_primary">一键生成老婆</button>
+</view>
