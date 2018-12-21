@@ -1,0 +1,8 @@
+/* pages/evaluation/index.wxss */
+.buttonContainer button{
+  margin: 16rpx 16rpx;
+}
+.ecaluationTextarea {
+  border: 1px solid #000;
+  margin: 0 auto;
+}
