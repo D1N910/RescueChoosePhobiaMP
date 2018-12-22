@@ -1,5 +1,6 @@
 Page({
   data: {
+    ifChan: 0,
     list: [
       {
         id: 'wife',
@@ -36,5 +37,17 @@ Page({
         confirmText: '朕知道了'
       })
     }
+    this.setData({
+      ifChan: wx.getStorageSync('ifChan') || 0
+    })
+  },
+  toggleChan: function(e) {
+    this.setData({
+      ifChan: parseInt(e.target.dataset.type)
+    })
+    wx.setStorage({
+      key: 'ifChan',
+      data: parseInt(e.target.dataset.type)
+    })
   }
 });

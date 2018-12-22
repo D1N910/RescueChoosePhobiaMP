@@ -6,17 +6,13 @@
         <view class="weui-cell__bd">
           <view>身高</view>
         </view>
-        <view
-          wx:if="{{nowBody.height}}"
-          class="weui-cell__ft">{{nowBody.height}}cm</view>
+        <view wx:if="{{nowBody.height}}" class="weui-cell__ft">{{nowBody.height}}cm</view>
       </view>
       <view class="weui-cell">
         <view class="weui-cell__bd">
           <view>体重</view>
         </view>
-        <view
-          wx:if="{{nowBody.weight}}"
-          class="weui-cell__ft">{{nowBody.weight}}kg</view>
+        <view wx:if="{{nowBody.weight}}" class="weui-cell__ft">{{nowBody.weight}}kg</view>
       </view>
       <view class="weui-cell">
         <view class="weui-cell__bd">
@@ -40,13 +36,13 @@
         <view class="weui-cell__bd">
           <view>发色</view>
         </view>
-        <view class="weui-cell__ft" style="background-color:{{nowBody.hairColor}};">{{nowBody.hairColor}}</view>
+        <view class="weui-cell__ft" style="width:200rpx;color: #fff;background-color:{{nowBody.hairColor}};">{{nowBody.hairColor}}</view>
       </view>
       <view class="weui-cell">
         <view class="weui-cell__bd">
           <view>瞳色</view>
         </view>
-        <view class="weui-cell__ft" style="background-color:{{nowBody.eyes}};">{{nowBody.eyes}}</view>
+        <view class="weui-cell__ft" style="width:200rpx;color: #fff;background-color:{{nowBody.eyes}};">{{nowBody.eyes}}</view>
       </view>
       <view class="weui-cell">
         <view class="weui-cell__bd">
@@ -61,9 +57,21 @@
         <view class="weui-cell__ft">{{nowBody.character}}</view>
       </view>
     </view>
+
+    <!-- 一键生成老婆 -->
+    <button type="primary" bindtap="startGenerator" class="weui-btn weui-btn_primary">一键生成老婆</button>
+
+    <!-- 复制老婆信息到剪切板 -->
+    <button bindtap='onSetWifeCLip' wx:if="{{nowBody.height}}" type="warn" class="weui-btn weui-btn_warn" size='mini'>
+      复制老婆信息到剪切板
+    </button>
   </view>
-  <button
-    type="primary"
-    bindtap="startGenerator"
-    class="weui-btn weui-btn_primary">一键生成老婆</button>
+
+  原作者
+  <view bindtap='onSetCLip' class="weui-footer">
+    <view class="weui-footer__links">
+      <view class="weui-footer__link">原作者：reed-chan</view>
+    </view>
+    <view class="weui-footer__text">https://reed-chan.github.io/Random-waifu-generater/</view>
+  </view>
 </view>

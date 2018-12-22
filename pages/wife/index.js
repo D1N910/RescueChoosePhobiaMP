@@ -36,7 +36,18 @@ Page({
    */
   data: {
     randomPool,
-    nowBody: {}
+    nowBody: {},
+    tableList: {
+      height: '身高',
+      weight: '体重',
+      hairstyle: '发型',
+      hairColor: '发色',
+      eyes: '瞳色',
+      attribute: '属性',
+      character: '性格',
+      cupsize: 'CUP',
+      skin: '肤色'
+    }
   },
 
   /**
@@ -182,6 +193,32 @@ Page({
     this.setData({
       ['nowBody.height']: height,
       ['nowBody.weight']: weight
+    })
+  },
+
+  onSetWifeCLip() {
+    let saveWifeText = ''
+    for (let i in this.data.nowBody) {
+      saveWifeText += this.data.tableList[i] + ' : '+ this.data.nowBody[i] + '\n'
+    }
+    wx.setClipboardData({
+      data: saveWifeText,
+      success(res) {
+        wx.showToast({
+          title: '已复制老婆信息',
+        })
+      }
+    })
+  },
+
+  onSetCLip() {
+    wx.setClipboardData({
+      data: 'https://reed-chan.github.io/Random-waifu-generater/',
+      success(res) {
+        wx.showToast({
+          title: '已复制原作地址到剪切板',
+        })
+      }
     })
   }
 })

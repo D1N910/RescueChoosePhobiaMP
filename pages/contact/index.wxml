@@ -19,4 +19,7 @@
         bindtap="Feeding"
       >恩宠作者</button>
   </view>
+    <view class="weui-footer">
+        <view class="weui-footer__text">写小程序就是交个朋友，不挣钱</view>
+    </view>
 </view>
