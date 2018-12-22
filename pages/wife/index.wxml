@@ -67,7 +67,7 @@
     </button>
   </view>
 
-  原作者
+  <!-- 原作者 -->
   <view bindtap='onSetCLip' class="weui-footer">
     <view class="weui-footer__links">
       <view class="weui-footer__link">原作者：reed-chan</view>
