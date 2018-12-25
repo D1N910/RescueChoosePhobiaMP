@@ -41,8 +41,10 @@ Page({
       height: '身高',
       weight: '体重',
       hairstyle: '发型',
-      hairColor: '发色',
-      eyes: '瞳色',
+      hairColor: '发色RGB',
+      hairColor_name: '发色',
+      eyes: '瞳色RGB',
+      eyes_name: '瞳色',
       attribute: '属性',
       character: '性格',
       cupsize: 'CUP',
@@ -120,11 +122,17 @@ Page({
   },
 
   randomData(elementId, dataName) {
-    let t1Num = Math.floor(Math.random() * dataName.length);
+    let t1Num = Math.floor(Math.random() * this.data.randomPool[dataName].length);
     let changeData = `nowBody.${elementId}`
     this.setData({
       [changeData]: this.data.randomPool[dataName][t1Num]
     })
+    if (dataName.indexOf('Rgb') !== -1) {
+      changeData = `nowBody.${elementId}_name`;
+      this.setData({
+        [changeData]: this.data.randomPool['RgbName_List'][t1Num]
+    })
+    }
   },
 
   generateCup() {
@@ -149,18 +157,20 @@ Page({
 
   // 眼睛颜色
   generateEyes() {
-    this.setData({
-      ['nowBody.eyes']: randomRGB()
-    })
+    this.randomData("eyes", 'Rgb_List');
+    // this.setData({
+    //   ['nowBody.eyes']: randomRGB()
+    // })
   },
 
   // 头发颜色
   generateHair() {
     this.randomData("hairstyle", 'Hair_data');
-    var newColor = randomRGB();
-    this.setData({
-      ['nowBody.hairColor']: newColor
-    })
+    this.randomData("hairColor", 'Rgb_List');
+    // var newColor = randomRGB();
+    // this.setData({
+    //   ['nowBody.hairColor']: newColor
+    // })
   },
 
   // 保存前妻
@@ -219,6 +229,13 @@ Page({
           title: '已复制原作地址到剪切板',
         })
       }
+    })
+  },
+
+  // 跳转到前妻页面
+  exWife() {
+    wx.navigateTo({
+      url: '../exWife/index',
     })
   }
 })

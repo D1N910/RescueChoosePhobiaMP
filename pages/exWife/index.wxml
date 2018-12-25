@@ -1,0 +1,11 @@
+<!--pages/exWife/index.wxml-->
+<view
+  class="pageTable">
+  <view
+    class="tableTitleContainer">
+    <view
+      wx:for="{{tableTitleList}}"
+      wx:key="{{index}}"
+      class="tableTitle">{{item}}</view>
+  </view>
+</view>

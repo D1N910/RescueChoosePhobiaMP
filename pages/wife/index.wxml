@@ -36,13 +36,13 @@
         <view class="weui-cell__bd">
           <view>发色</view>
         </view>
-        <view class="weui-cell__ft" style="width:200rpx;color: #fff;background-color:{{nowBody.hairColor}};">{{nowBody.hairColor}}</view>
+        <view class="weui-cell__ft" style="width:250rpx;color: #fff;background-color:{{nowBody.hairColor}};">{{nowBody.hairColor+nowBody.hairColor_name}}</view>
       </view>
       <view class="weui-cell">
         <view class="weui-cell__bd">
           <view>瞳色</view>
         </view>
-        <view class="weui-cell__ft" style="width:200rpx;color: #fff;background-color:{{nowBody.eyes}};">{{nowBody.eyes}}</view>
+        <view class="weui-cell__ft" style="width:250rpx;color: #fff;background-color:{{nowBody.eyes}};">{{nowBody.eyes+nowBody.eyes_name}}</view>
       </view>
       <view class="weui-cell">
         <view class="weui-cell__bd">
@@ -64,6 +64,9 @@
     <!-- 复制老婆信息到剪切板 -->
     <button bindtap='onSetWifeCLip' wx:if="{{nowBody.height}}" type="warn" class="weui-btn weui-btn_warn" size='mini'>
       复制老婆信息到剪切板
+    </button>
+    <button bindtap='exWife' size='mini'>
+      你的历届老婆
     </button>
   </view>
 

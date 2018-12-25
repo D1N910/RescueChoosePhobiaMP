@@ -1,0 +1,8 @@
+/* pages/exWife/index.wxss */
+.tableTitleContainer {
+  display: flex;
+  overflow-x: auto;
+}
+.tableTitle {
+  width: 150rpx;
+}
